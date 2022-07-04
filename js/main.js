@@ -10,7 +10,7 @@ class Producto{
 
 let vistaPreviaTotal = 0; 
 let vistaPreviaCarrito = "";
-let mostrarListado = "";
+let opciones = "";
 
 // Array de objetos (productos).
 const inventario = [];
@@ -19,12 +19,12 @@ const listado = [];
 // Array guardar los productos confirmados para comprar.
 const carrito = [];
 
-inventario.push(new Producto(1, "producto 1", 500, 0, 0));
-inventario.push(new Producto(2, "producto 2", 650, 0, 0));
-inventario.push(new Producto(3, "producto 3", 700, 0, 0));
-inventario.push(new Producto(4, "producto 4", 800, 0, 0));
-inventario.push(new Producto(5, "producto 5", 1000, 0, 0));
-inventario.push(new Producto(6, "producto 6", 2500, 0, 0));
+inventario.push(new Producto(1, "cepillo", 500, 0, 0));
+inventario.push(new Producto(2, "esponja", 650, 0, 0));
+inventario.push(new Producto(3, "shampoo", 700, 0, 0));
+inventario.push(new Producto(4, "acondicionador", 800, 0, 0));
+inventario.push(new Producto(5, "afeitadora", 1000, 0, 0));
+inventario.push(new Producto(6, "botella", 2500, 0, 0));
 
 
 // Clico para agregar en forma de string los datos de cada objeto.
@@ -71,7 +71,7 @@ function mostrarCarrito(){
                 carrito.push(`${seleccionados.nombre}- $${seleccionados.precio} (x${seleccionados.cantidad}) ($${seleccionados.precioCantidad})`)
             }
         }
-        alert(`Gracias por su compra: \n${carrito.join("\n")} \nTotal pagado: $${vistaPreviaTotal} \nVuelva pronto.`);
+        alert(`Gracias por su compra: \n${carrito.join("\n")} \n\nTOTAL PAGADO: $${inventario.reduce((a,b) => a + b.precioCantidad, 0)} \nVuelva pronto.`);
     }else if(opciones.toLowerCase() === "vaciar"){
         vistaPreviaTotal = 0; 
         vistaPreviaCarrito = "";
@@ -92,6 +92,3 @@ saludo();
 do{
     menu();
 }while((opciones != "salir") && (opciones != "no") && (opciones != "finalizar") && (opciones != "cancelar"))
-
-
-console.log(carrito);
