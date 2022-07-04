@@ -61,7 +61,7 @@ function menu(){
 
 // Funcion para mostrar el carrito y mostrar opciones.
 function mostrarCarrito(){
-    alert(`Vista previa de su carrito: \n${vistaPreviaCarrito} \nTotal a pagar: ${vistaPreviaTotal}`);
+    alert(`Vista previa de su carrito: \n${vistaPreviaCarrito} \nTotal a pagar: $${vistaPreviaTotal}`);
     opciones = prompt("Por favor elija una opcion \nPara continuar comprando: ingrese 'si' \nPara finalizar la compra: ingrese 'finalizar' \nPara vaciar el carrito: ingrese 'vaciar' \nPara salir: ingrese 'cancelar'").toLowerCase();;
     if(opciones === "si"){
         menu();
