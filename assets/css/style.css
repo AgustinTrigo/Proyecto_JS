@@ -1,0 +1,24 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.card{
+    display: inline-block;
+    width: 200px;
+    height: 20px;
+    margin: 10px;
+    border: solid 1px black;
+}
+
+.btn{
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    margin: 10px;
+    border: solid 1px black;
+    font-size: 20px;
+    color: red;
+    font-weight: 500;
+}
