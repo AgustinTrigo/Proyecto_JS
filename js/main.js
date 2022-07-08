@@ -12,6 +12,9 @@ let vistaPreviaTotal = 0;
 let vistaPreviaCarrito = "";
 let opciones = "";
 
+let detalleCarrito = document.getElementById("1");
+
+
 // Array de objetos (productos).
 const inventario = [];
 // Array de para mostrar los productos disponibles.
@@ -25,7 +28,6 @@ inventario.push(new Producto(3, "shampoo", 700, 0, 0));
 inventario.push(new Producto(4, "acondicionador", 800, 0, 0));
 inventario.push(new Producto(5, "afeitadora", 1000, 0, 0));
 inventario.push(new Producto(6, "botella", 2500, 0, 0));
-
 
 // Clico para agregar en forma de string los datos de cada objeto.
 for(const producto of inventario){
@@ -55,23 +57,28 @@ function menu(){
     }
 
     if(opciones == "salir"){
-        alert("Vuelva pronto.")
+        detalleCarrito.innerHTML = `<h4>Vuelva pronto.</h4>`
     }
 }
 
 // Funcion para mostrar el carrito y mostrar opciones.
 function mostrarCarrito(){
     alert(`Vista previa de su carrito: \n${vistaPreviaCarrito} \nTotal a pagar: $${vistaPreviaTotal}`);
-    opciones = prompt("Por favor elija una opcion \nPara continuar comprando: ingrese 'si' \nPara finalizar la compra: ingrese 'finalizar' \nPara vaciar el carrito: ingrese 'vaciar' \nPara salir: ingrese 'cancelar'").toLowerCase();;
+    opciones = prompt("Por favor elija una opcion: \nPara continuar comprando: ingrese 'si' \nPara finalizar la compra: ingrese 'finalizar' \nPara vaciar el carrito: ingrese 'vaciar' \nPara salir: ingrese 'cancelar'").toLowerCase();;
     if(opciones === "si"){
         menu();
     }else if(opciones.toLowerCase() === "finalizar"){
         for(const seleccionados of inventario){
             if(seleccionados.cantidad >= 1){
-                carrito.push(`${seleccionados.nombre}- $${seleccionados.precio} (x${seleccionados.cantidad}) ($${seleccionados.precioCantidad})`)
+                carrito.push(`<li>${seleccionados.nombre}- $${seleccionados.precio} (x${seleccionados.cantidad}) ($${seleccionados.precioCantidad})</li>`)
             }
         }
-        alert(`Gracias por su compra: \n${carrito.join("\n")} \n\nTOTAL PAGADO: $${inventario.reduce((a,b) => a + b.precioCantidad, 0)} \nVuelva pronto.`);
+        // INTERACTUANDO CON EL DOM
+        detalleCarrito.innerHTML = `
+        <h4>Detalle de su compra:</h4>
+        <ul>${carrito.join("")}</ul>
+        <h4>TOTAL PAGADO: $ ${inventario.reduce((a,b) => a + b.precioCantidad, 0)}</h4>
+        <h4>Gracias, vuelva pronto.</h4>`
     }else if(opciones.toLowerCase() === "vaciar"){
         vistaPreviaTotal = 0; 
         vistaPreviaCarrito = "";
@@ -82,7 +89,7 @@ function mostrarCarrito(){
         alert("Carrito vacio.");
         menu();
     }else if(opciones.toLowerCase() === "cancelar"){       
-        alert("Vuelva pronto.");
+        detalleCarrito.innerHTML = `<h4>Vuelva pronto.</h4>`
     }
 }
 
