@@ -6,22 +6,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans+Oswald:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./assets/css/style.css">
     <title>Document</title>
 </head>
 <body>
-    <div class="menu">
-        <h2>bienvenido a nuestro ecommerce</h2>
-        <div>
-            <input type="button" value="VER CATALOGO" id="menu-btn" class="menu__btn">
-        </div>
-        <div id="carrito">
-            <div id="detalle" class="detalleCarrito">
+    <main id="catalogo" class="galeria">
+        <div id="card" class="productCard">
+            <div>
+                <img src="./assets/img/productos/cepillos_dientes.jpg">
+            </div>
+            <div class="productCard__text">
+                <h5>producto 1</h5>
+                <h5>precio contado</h5>
+                <h5>$: 00000.00</h5>
+            </div>
+            <div>
+                <input type="button" value="AGREGAR" class="productCard__btn">
             </div>
         </div>
-    </div>
-
-    <script src="./js/main.js"></script>
+    </main>
+    <!-- <script src="./js/main.js"></script> -->
 </body>
 </html>

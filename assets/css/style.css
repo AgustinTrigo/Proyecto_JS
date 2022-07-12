@@ -6,81 +6,52 @@
 
 body{
     font-family: 'Work Sans', sans-serif;
+    background-color: rgb(245, 244, 237);
 }
 
-.menu{
+.productCard{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}
-
-.menu h2{
-    margin-top: 100px;
-    text-transform: uppercase;
-}
-
-.menu__btn{
-    margin: 50px;
-    padding: 5px 8px 5px 8px;
+    width: 320px;
+    height: 450px;
+    background-color: white;
+    box-shadow: 0px 0px 8px -5px rgba(0,0,0,0.53);
     border-radius: 5px;
-    border: solid 1px black;
-    background-color: rgb(94, 168, 134);
-    box-shadow: 5px 5px 31px -8px #000000;
-    cursor: pointer;
 }
 
-.menu__btn:active{
+.productCard img{
+    border-radius: 5px;
+}
+
+.productCard__text h5{
+    font-family: 'Oswald', sans-serif;
+    text-align: center;
+    font-size: 0.9em;
+    margin: 10px 0px;
+    text-transform: uppercase;
+    color: #46A5A5;
+}
+
+.productCard__btn{
+    background-color: rgb(164, 231, 86);
+    margin-top: 5px;
+    padding: 8px 15px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 5px 5px 31px -8px #000000;
+    font-weight: 700;
+}
+
+.productCard__btn:active{
     box-shadow: none;
     transform: translate(0.5px,1px);
     background-color: rgb(12, 250, 139);
-}
-
-ul{
-    list-style: none;
-}
-
-ul li{
-    margin-bottom: 5px;
-}
-
-h4{
-    margin: 20px 0px 20px 0px;
-}
-
-.card{
-    width: 350px;
-    height: auto;
-    border: solid 1px black;
-    border-radius: 10px;
-    background-color: rgb(203, 255, 242);
-}
-
-.card div{
-    padding-left: 15px;
-    margin: 10px 0px 10px 0px;
-}
-
-.detalleCarrito{
-    position: relative;
-}
-
-.btnCerrar{
-    position: absolute;
-    top: -50px;
-    right: 0;
-    background-color: red;
     color: white;
-    padding: 5px 8px 5px 8px;
-    border-radius: 10px;
-    border: solid 1px black;
-    box-shadow: 5px 5px 31px -8px #000000;
-    cursor: pointer;
+    font-weight: 700;
 }
 
-.btnCerrar:active{
-    box-shadow: none;
-    transform: translate(1px,0.5px);
-    background-color: rgb(139, 37, 37);
-}
+
 
