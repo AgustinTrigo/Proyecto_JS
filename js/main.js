@@ -12,7 +12,9 @@ let vistaPreviaTotal = 0;
 let vistaPreviaCarrito = "";
 let opciones = "";
 
-let detalleCarrito = document.getElementById("1");
+let divCarrito = document.getElementById("carrito")
+let detalleCarrito = document.getElementById("detalle");
+let btnMenu = document.getElementById("menu-btn");
 
 
 // Array de objetos (productos).
@@ -55,10 +57,6 @@ function menu(){
     if(opciones == "carrito"){
         mostrarCarrito();
     }
-
-    if(opciones == "salir"){
-        detalleCarrito.innerHTML = `<h4>Vuelva pronto.</h4>`
-    }
 }
 
 // Funcion para mostrar el carrito y mostrar opciones.
@@ -74,11 +72,14 @@ function mostrarCarrito(){
             }
         }
         // INTERACTUANDO CON EL DOM
+        divCarrito.className = "card";
         detalleCarrito.innerHTML = `
+        <input type="button" value="CERRAR" class="btnCerrar" id="btn-cerrar" onClick="borrarHTML()">
         <h4>Detalle de su compra:</h4>
         <ul>${carrito.join("")}</ul>
         <h4>TOTAL PAGADO: $ ${inventario.reduce((a,b) => a + b.precioCantidad, 0)}</h4>
         <h4>Gracias, vuelva pronto.</h4>`
+        let btnMenu = document.getElementById("btn-cerrar");
     }else if(opciones.toLowerCase() === "vaciar"){
         vistaPreviaTotal = 0; 
         vistaPreviaCarrito = "";
@@ -94,8 +95,15 @@ function mostrarCarrito(){
 }
 
 // Ciclo para llamar a la funcion menu();
-saludo();
 
-do{
-    menu();
-}while((opciones != "salir") && (opciones != "no") && (opciones != "finalizar") && (opciones != "cancelar"))
+btnMenu.onclick = () => {
+    do{
+        menu();
+    }while((opciones != "salir") && (opciones != "no") && (opciones != "finalizar") && (opciones != "cancelar"));
+}
+
+function borrarHTML(){
+    detalleCarrito.innerHTML = "";
+    divCarrito.className = "";
+    
+}

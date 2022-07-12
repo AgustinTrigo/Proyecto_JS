@@ -8,62 +8,20 @@ body{
     font-family: 'Work Sans', sans-serif;
 }
 
-.card{
+.menu{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 300px;
-    height: auto;
-    margin: 10px;
-    border: solid 1px black;
-    border-radius: 10px;
-    background-color: rgb(250, 247, 242);
-    box-shadow:  5px 5px 10px #bebebe,
-             -5px -5px 10px #ffffff;
 }
 
-/* Reemplazar con una img */
-.card__img{
-    width: 250px;
-    height: 280px;
-    margin-top: 20px;
-    border-radius: 10px;
-    border: solid 1px black;
-    background-color: white;
+.menu h2{
+    margin-top: 100px;
+    text-transform: uppercase;
 }
 
-.card__text{
-    width: 150px;
-    height: 50px;
-    margin-top: 10px;
-    text-align: center;
-}
-
-.card__text h4{
-    margin: 8px 0px 8px 0px;
-}
-
-.card__btn{
-    margin: 20px 0px 20px 0px;
-}
-
-.card__inputQty{
-    margin: 20px 0px 0px 0px;
-}
-
-.card__inputQty label{
-    margin-right: 5px;
-}
-
-.card__inputQty input{
-    width: 50px;
-    height: 25px;
-    font-size: 16px;
-    text-align: center;
-}
-
-.card__btn input{
+.menu__btn{
+    margin: 50px;
     padding: 5px 8px 5px 8px;
     border-radius: 5px;
     border: solid 1px black;
@@ -72,8 +30,57 @@ body{
     cursor: pointer;
 }
 
-.card__btn input:active{
+.menu__btn:active{
     box-shadow: none;
     transform: translate(0.5px,1px);
     background-color: rgb(12, 250, 139);
 }
+
+ul{
+    list-style: none;
+}
+
+ul li{
+    margin-bottom: 5px;
+}
+
+h4{
+    margin: 20px 0px 20px 0px;
+}
+
+.card{
+    width: 350px;
+    height: auto;
+    border: solid 1px black;
+    border-radius: 10px;
+    background-color: rgb(203, 255, 242);
+}
+
+.card div{
+    padding-left: 15px;
+    margin: 10px 0px 10px 0px;
+}
+
+.detalleCarrito{
+    position: relative;
+}
+
+.btnCerrar{
+    position: absolute;
+    top: -50px;
+    right: 0;
+    background-color: red;
+    color: white;
+    padding: 5px 8px 5px 8px;
+    border-radius: 10px;
+    border: solid 1px black;
+    box-shadow: 5px 5px 31px -8px #000000;
+    cursor: pointer;
+}
+
+.btnCerrar:active{
+    box-shadow: none;
+    transform: translate(1px,0.5px);
+    background-color: rgb(139, 37, 37);
+}
+

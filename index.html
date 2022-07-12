@@ -11,20 +11,17 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="card">
-        <div class="card__img"></div>
-        <div class="card__text">
-            <h4>PRODUCTO 1</h4>
-            <h4>PRECIO: $ 500</h4>
+    <div class="menu">
+        <h2>bienvenido a nuestro ecommerce</h2>
+        <div>
+            <input type="button" value="VER CATALOGO" id="menu-btn" class="menu__btn">
         </div>
-        <div class="card__inputQty">
-            <label name="cantidad">CANTIDAD</label>
-            <input type="number" id="qty" name="cantidad" min="1" max="100">
-        </div>
-        <div class="card__btn">
-            <input type="button" value="ADD TO CART">
+        <div id="carrito">
+            <div id="detalle" class="detalleCarrito">
+            </div>
         </div>
     </div>
-    <!-- <script src="./js/main.js"></script> -->
+
+    <script src="./js/main.js"></script>
 </body>
 </html>
