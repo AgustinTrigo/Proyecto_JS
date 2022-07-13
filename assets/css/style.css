@@ -68,5 +68,15 @@ body{
     font-weight: 700;
 }
 
+@media (min-width: 800px){
+    .galeria{
+        display: grid;
+        row-gap: 25px;
+        column-gap: 25px;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-areas: "card";
+        justify-items: center;
+    }
+}
 
 

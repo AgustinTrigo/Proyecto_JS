@@ -1,16 +1,3 @@
-/*
-class Producto{
-    constructor(id, nombre, precio, stock, cantidad, precioCantidad){
-        this.id = id;
-        this.nombre = nombre;
-        this.precio = precio;
-        this.stock = stock;
-        this.cantidad = cantidad;
-        this.precioCantidad = precioCantidad;
-    }
-}*/
-
-
 const inventario = [
     {
         id:1, 
@@ -28,7 +15,7 @@ const inventario = [
         stock: 20,
         cantidad: 0,
         precioCantidad: 0,
-        img: "./assets/img/productos/esponja_vegetal_cocina.jp",
+        img: "./assets/img/productos/esponja_vegetal_cocina.jpg",
     },
     {
         id:3, 
@@ -67,3 +54,23 @@ const inventario = [
         img: "./assets/img/productos/detergente_solido.jpg",
     }
 ]
+
+let catalogo = document.getElementById("catalogo");
+catalogo.className = "galeria";
+
+inventario.forEach(i => {
+    catalogo.innerHTML += `
+    <div id="card" class="productCard">
+        <div class="productCard__img">
+            <img src="${i.img}">
+        </div>
+        <div class="productCard__text">
+            <h5>${i.nombre}</h5>
+            <h5>precio contado</h5>
+            <h5>$: ${i.precio}</h5>
+        </div>
+        <div>
+            <input type="button" value="AGREGAR" class="productCard__btn">
+        </div>
+    </div>`
+})
