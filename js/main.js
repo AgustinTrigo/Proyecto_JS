@@ -74,3 +74,9 @@ inventario.forEach(i => {
         </div>
     </div>`
 })
+
+function addGaleriaLocal(productos){
+    localStorage.setItem("inventario", JSON.stringify(productos));
+}
+
+addGaleriaLocal(inventario);
