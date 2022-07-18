@@ -1,8 +1,8 @@
 const inventario = [
     {
         id:1, 
-        nombre: "producto 1",
-        precio: 250,
+        nombre: "cepillo de bambu",
+        precio: 300,
         stock: 20,
         cantidad: 0,
         precioCantidad: 0,
@@ -10,8 +10,8 @@ const inventario = [
     },
     {
         id:2, 
-        nombre: "producto 2",
-        precio: 250,
+        nombre: "esponja vegetal",
+        precio: 200,
         stock: 20,
         cantidad: 0,
         precioCantidad: 0,
@@ -19,8 +19,8 @@ const inventario = [
     },
     {
         id:3, 
-        nombre: "producto 3",
-        precio: 250,
+        nombre: "maquina de afeitar",
+        precio: 500,
         stock: 20,
         cantidad: 0,
         precioCantidad: 0,
@@ -28,8 +28,8 @@ const inventario = [
     },
     {
         id:4, 
-        nombre: "producto 4",
-        precio: 250,
+        nombre: "hilo dental vegetal",
+        precio: 350,
         stock: 20,
         cantidad: 0,
         precioCantidad: 0,
@@ -37,8 +37,8 @@ const inventario = [
     },
     {
         id:5, 
-        nombre: "producto 4",
-        precio: 250,
+        nombre: "pasta dental",
+        precio: 400,
         stock: 20,
         cantidad: 0,
         precioCantidad: 0,
@@ -46,7 +46,7 @@ const inventario = [
     },
     {
         id:6, 
-        nombre: "producto 6",
+        nombre: "detergente solido",
         precio: 250,
         stock: 20,
         cantidad: 0,
@@ -55,28 +55,57 @@ const inventario = [
     }
 ]
 
+let inventarioLocal = []
+
+const loadInventory = () => {localStorage.setItem("inventario", JSON.stringify(inventario))};
+function getInventory(){
+    inventarioLocal = JSON.parse(localStorage.getItem("inventario")); 
+    return inventarioLocal;
+};
+const loadCart = () => {localStorage.setItem("carrito", JSON.stringify(cart))};
+
+loadInventory();
+getInventory();
+
 let catalogo = document.getElementById("catalogo");
+let addBtn = document.getElementById("addBtn")
 catalogo.className = "galeria";
 
-inventario.forEach(i => {
+
+inventarioLocal.forEach((producto, index) => {
     catalogo.innerHTML += `
     <div id="card" class="productCard">
         <div class="productCard__img">
-            <img src="${i.img}">
+            <img src="${producto.img}">
         </div>
         <div class="productCard__text">
-            <h5>${i.nombre}</h5>
+            <h5>${producto.nombre.toUpperCase()}</h5>
             <h5>precio contado</h5>
-            <h5>$: ${i.precio}</h5>
+            <h5>$: ${producto.precio}</h5>
         </div>
         <div>
-            <input type="button" value="AGREGAR" class="productCard__btn">
+            <input type="button" value="AGREGAR" id="addBtn" class="productCard__btn" onClick="addProduct(${index})">
         </div>
     </div>`
 })
 
-function addGaleriaLocal(productos){
-    localStorage.setItem("inventario", JSON.stringify(productos));
+const cart = [];
+
+function addProduct(index){
+
+    let findI = cart.findIndex(elemento =>{
+        return elemento.id === inventarioLocal[index].id;
+    })
+    if(findI === -1){
+        inventarioLocal[index].cantidad += 1;
+        inventarioLocal[index].precioCantidad = inventarioLocal[index].cantidad * inventarioLocal[index].precio;
+        cart.push(inventarioLocal[index]);
+    }else if(cart.includes(inventarioLocal[index])){
+        inventarioLocal[index].cantidad += 1;
+        inventarioLocal[index].precioCantidad = inventarioLocal[index].cantidad * inventarioLocal[index].precio;
+    }
+    loadCart();
+    console.log(cart)
 }
 
-addGaleriaLocal(inventario);
+
