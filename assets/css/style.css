@@ -9,6 +9,17 @@ body{
     background-color: rgb(245, 244, 237);
 }
 
+h3{
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    text-align: center;
+    margin: 25px 0px 15px 0px;
+}
+
+a{
+    text-decoration: none;
+}
+
 .galeria{
     display: grid;
     row-gap: 25px;
@@ -81,6 +92,88 @@ body{
         justify-items: center;
     }
 }
+
+/* Carrito de compras */
+
+.styleCarrito{
+    display: grid;
+    row-gap: 15px;
+    grid-template-columns: 380px;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.carrito__card{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 100px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 1px 1px 8px -5px rgba(0,0,0,0.53);
+}
+
+.carrito__img{
+    width: 100px;
+    height: 100%;
+}
+
+.carrito__img img{
+    width: 100%;
+    border-radius: 8px;
+}
+
+.carrito__text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 200px;
+    height: 100%;
+}
+
+.carrito__text h5{
+    font-family: 'Oswald', sans-serif;
+    text-align: start;
+    font-size: 0.9em;
+    margin-left: 10px;
+    text-transform: uppercase;
+    color: #46A5A5;
+    letter-spacing: 1.2px;
+}
+
+.carrito__btn{
+    width: 60px;
+    height: 100%;
+}
+
+.carrito__btn button{
+    position: relative;
+    top: 40px;
+    left: 18px;
+    border: none;
+    cursor: pointer;
+    background-color: white;
+    font-size: 1.3em;
+    color: red;
+}
+
+.carrito__btn button:active{
+    position: relative;
+    top: 40px;
+    left: 18px;
+    border: none;
+    cursor: pointer;
+    background-color: white;
+    font-size: 1.3em;
+    color: black;
+}
+
+
+
+
+
+
+
 
 
 
