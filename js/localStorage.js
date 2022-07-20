@@ -55,17 +55,14 @@ const inventario = [
     }
 ]
 
-let inventarioLocal;
-const cart = [];
 
 const loadInventory = () => {localStorage.setItem("inventario", JSON.stringify(inventario))};
 const getInventory = () => {
-    inventarioLocal = JSON.parse(localStorage.getItem("inventario")); 
-    return inventarioLocal;
-};
+    return inventarioLocal = JSON.parse(localStorage.getItem("inventario")); 
+    
+}
 
-const loadCart = () => {localStorage.setItem("carrito", JSON.stringify(cart))};
+const loadCart = () => {localStorage.setItem("carrito", JSON.stringify(carritoLocal))};
 const getCart = () => {
-    cartLocal = JSON.parse(localStorage.getItem("carrito"));
-    return cartLocal;
+    return carritoLocal = JSON.parse(localStorage.getItem("carrito")) || [];
 }

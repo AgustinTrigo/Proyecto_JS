@@ -3,7 +3,7 @@ carritoCompras.className = "styleCarrito";
 
 function renderCarrito(){
     getCart();
-    cartLocal.forEach((i) => {
+    carritoLocal.forEach((i) => {
         carritoCompras.innerHTML += `
         <div class="carrito__card">
             <div class="carrito__img">

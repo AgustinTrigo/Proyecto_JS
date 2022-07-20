@@ -1,12 +1,13 @@
 loadInventory();
-getInventory();
+getCart();
+console.log(carritoLocal);
 
 let catalogo = document.getElementById("catalogo");
 let addBtn = document.getElementById("addBtn");
 catalogo.className = "galeria";
 
 
-inventarioLocal.forEach((producto, index) => {
+getInventory().forEach((producto, index) => {
     catalogo.innerHTML += `
     <div id="card" class="productCard">
         <div class="productCard__img">
@@ -25,16 +26,20 @@ inventarioLocal.forEach((producto, index) => {
 
 
 function addProduct(index){
-    let findI = cart.findIndex(elemento =>{
+    let findI = carritoLocal.findIndex(elemento =>{
         return elemento.id === inventarioLocal[index].id;
     })
     if(findI === -1){
         inventarioLocal[index].cantidad += 1;
         inventarioLocal[index].precioCantidad = inventarioLocal[index].cantidad * inventarioLocal[index].precio;
-        cart.push(inventarioLocal[index]);
-    }else if(cart.includes(inventarioLocal[index])){
-        inventarioLocal[index].cantidad += 1;
-        inventarioLocal[index].precioCantidad = inventarioLocal[index].cantidad * inventarioLocal[index].precio;
+        carritoLocal.push(inventarioLocal[index]);
+        console.log(carritoLocal);
+        console.log("prueba 1");
+    } else if(carritoLocal.length > 0){
+        carritoLocal[findI].cantidad += 1;
+        carritoLocal[findI].precioCantidad = carritoLocal[findI].cantidad * carritoLocal[findI].precio;
+        console.log(carritoLocal);
+        console.log(carritoLocal[findI]);
     }
     loadCart();
 }
