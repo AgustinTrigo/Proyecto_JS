@@ -29,8 +29,8 @@ renderCarrito();
 
 function quitarProducto(index){
     console.log("prueba 3")
-    cartLocal[index].cantidad -= 1;
-    cartLocal[index].precioCantidad = cartLocal[index].cantidad * cartLocal[index].precio;
+    carritoLocal[index].cantidad -= 1;
+    carritoLocal[index].precioCantidad = carritoLocal[index].cantidad * carritoLocal[index].precio;
     console.log(carritoLocal);
     console.log("prueba 4");
     loadCart();
