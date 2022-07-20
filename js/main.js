@@ -3,7 +3,6 @@ getCart();
 console.log(carritoLocal);
 
 let catalogo = document.getElementById("catalogo");
-let addBtn = document.getElementById("addBtn");
 catalogo.className = "galeria";
 
 

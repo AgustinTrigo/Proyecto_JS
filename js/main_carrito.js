@@ -2,8 +2,8 @@ let carritoCompras = document.getElementById("mainCart");
 carritoCompras.className = "styleCarrito";
 
 function renderCarrito(){
-    getCart();
-    carritoLocal.forEach((i) => {
+    carritoCompras.innerHTML = "";
+    carritoLocal.forEach((i, index) => {
         carritoCompras.innerHTML += `
         <div class="carrito__card">
             <div class="carrito__img">
@@ -16,10 +16,23 @@ function renderCarrito(){
                 <h5>subtotal $: ${i.precioCantidad}</h5>
             </div>
             <div class="carrito__btn">
-                <button type="button" value="" id="trashBtn" ><i class="fa-solid fa-trash-can"></i></button>
+                <button type="button" value="" id="trashBtn" onClick="quitarProducto(${index})"><i class="fa-solid fa-trash-can"></i></button>
             </div>
         </div>`
     })
 }
 
+getCart();
 renderCarrito();
+
+
+
+function quitarProducto(index){
+    console.log("prueba 3")
+    cartLocal[index].cantidad -= 1;
+    cartLocal[index].precioCantidad = cartLocal[index].cantidad * cartLocal[index].precio;
+    console.log(carritoLocal);
+    console.log("prueba 4");
+    loadCart();
+    renderCarrito();
+}
