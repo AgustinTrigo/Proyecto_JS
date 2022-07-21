@@ -3,6 +3,16 @@ carritoCompras.className = "styleCarrito";
 
 function renderCarrito(){
     carritoCompras.innerHTML = "";
+    carritoCompras.innerHTML = `
+    <div class="carrito__panel">
+        <div class="carrito__text">
+            <h5>total $: ${carritoLocal.reduce((a,b) => a + b.precioCantidad, 0)}</h5>
+        </div>
+        <div class="carrito__panel--btn">
+            <button type="button" value="" id="finalizarBtn">finalizar compra</button>
+            <button type="button" value="" id="vaciarBtn" onClick="vaciarCarrito()">vaciar carrito</button>
+        </div>
+    </div>`;
     carritoLocal.forEach((i, index) => {
         carritoCompras.innerHTML += `
         <div class="carrito__card">
@@ -37,4 +47,17 @@ function quitarProducto(index){
     carritoLocal[index].cantidad === 0 && carritoLocal.splice(index, 1);
     loadCart();
     renderCarrito();
+}
+
+function vaciarCarrito(){
+    carritoLocal = [];
+    localStorage.removeItem("carrito");
+    renderCarrito();
+    Toastify({
+        text: "VACIASTE EL CARRITO",
+        duration: 2000,
+        style: {
+            background: 'linear-gradient(to top left, rgb(247, 163, 160), rgb(204, 28, 21))'
+        }
+    }).showToast();
 }

@@ -103,6 +103,17 @@ a{
     margin-top: 50px;
 }
 
+.carrito__panel{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 100px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 1px 1px 8px -5px rgba(0,0,0,0.53)
+}
+
 .carrito__card{
     display: flex;
     flex-direction: row;
@@ -168,6 +179,35 @@ a{
     color: black;
 }
 
+.carrito__panel--btn {
+    display: flex;
+    flex-direction: column;
+}
+
+.carrito__panel--btn button{
+    font-family: 'Oswald', sans-serif;
+    background-color: rgb(173, 173, 173);
+    color: white;
+    width: 120px;
+    margin: 2.5px 0px;
+    padding: 5px 5px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0px 0px 8px -5px rgba(0,0,0,0.53);
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+
+}
+
+#finalizarBtn:hover {
+    background-color: rgb(14, 165, 165);
+}
+
+#vaciarBtn:hover {
+    background-color: rgb(204, 28, 21);
+}
 
 
 

@@ -41,6 +41,13 @@ function addProduct(index){
         console.log(carritoLocal[findI]);
     }
     loadCart();
+    Toastify({
+        text: "PRODUCTO AGREGADO AL CARRITO",
+        duration: 1500,
+        style: {
+            background: 'linear-gradient(to top left, rgb(57, 175, 155), rgb(186, 228, 178))'
+        }
+    }).showToast();
 }
 
 
