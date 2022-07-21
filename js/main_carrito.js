@@ -18,8 +18,10 @@ function renderCarrito(){
             <div class="carrito__btn">
                 <button type="button" value="" id="trashBtn" onClick="quitarProducto(${index})"><i class="fa-solid fa-trash-can"></i></button>
             </div>
-        </div>`
+        </div>`;
+        
     })
+    
 }
 
 getCart();
@@ -28,11 +30,11 @@ renderCarrito();
 
 
 function quitarProducto(index){
-    console.log("prueba 3")
-    carritoLocal[index].cantidad -= 1;
-    carritoLocal[index].precioCantidad = carritoLocal[index].cantidad * carritoLocal[index].precio;
-    console.log(carritoLocal);
-    console.log("prueba 4");
+    if(carritoLocal[index].cantidad > 0){
+        carritoLocal[index].cantidad--;
+        carritoLocal[index].precioCantidad = carritoLocal[index].precio * carritoLocal[index].cantidad;
+    }
+    carritoLocal[index].cantidad === 0 && carritoLocal.splice(index, 1);
     loadCart();
     renderCarrito();
 }
