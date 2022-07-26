@@ -14,8 +14,27 @@
 </head>
 <body>
     <header>
-        <a href="/index.html"><h3>catalogo</h3></a>
-        <a href="./carrito.html"><h3>carrito de compras</h3></a>
+        <nav class="navbar">
+            <div class="navbar__menu">
+                <div>
+                </div>
+            </div>
+            <div div class="navbar__submenu">
+                <form class="navbar__submenu--filtros">
+                    <label for="filtros">filtrar</label>
+                    <select name="filtros">
+                        <option value="TODOS">mostrar todos</option>
+                        <option value="FILTRO 1"> filtro 1</option>
+                        <option value="FILTRO 2"> filtro 2</option>
+                        <option value="FILTRO 3"> filtro 3</option>
+                    </select>
+                </form>
+                <div class="navbar__submenu--btn" id="btnCarrito">
+                    <a href="./carrito.html"><button type="button" value="" ><i class="fa-solid fa-cart-shopping"></i></button></a>
+                    <div id="contar"></div>
+                </div>
+            </div>
+        </nav>
     </header>
     <main id="catalogo">
     </main>

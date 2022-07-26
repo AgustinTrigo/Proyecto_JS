@@ -56,6 +56,8 @@ function vaciarCarrito(){
     Toastify({
         text: "VACIASTE EL CARRITO",
         duration: 2000,
+        position: "top",
+        position: "left",
         style: {
             background: 'linear-gradient(to top left, rgb(247, 163, 160), rgb(204, 28, 21))'
         }
