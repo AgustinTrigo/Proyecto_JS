@@ -6,7 +6,8 @@
         "stock": 20,
         "cantidad": 0,
         "precioCantidad": 0,
-        "img": "./assets/img/productos/cepillos_dientes.jpg"
+        "img": "./assets/img/productos/cepillos_dientes.jpg",
+        "categoria": "grupo1"
     },
     {
         "id":2, 
@@ -15,16 +16,18 @@
         "stock": 20,
         "cantidad": 0,
         "precioCantidad": 0,
-        "img": "./assets/img/productos/esponja_vegetal_cocina.jpg"
+        "img": "./assets/img/productos/esponja_vegetal_cocina.jpg",
+        "categoria": "grupo2"
     },
     {
         "id":3, 
         "nombre": "maquina de afeitar",
         "precio": 500,
         "stock": 20,
-        "antidad": 0,
+        "cantidad": 0,
         "precioCantidad": 0,
-        "img": "./assets/img/productos/maquina_afeitar.jpg"
+        "img": "./assets/img/productos/maquina_afeitar.jpg",
+        "categoria": "grupo3"
     },
     {
         "id":4, 
@@ -33,7 +36,8 @@
         "stock": 20,
         "cantidad": 0,
         "precioCantidad": 0,
-        "img": "./assets/img/productos/hilo_dental.jpg"
+        "img": "./assets/img/productos/hilo_dental.jpg",
+        "categoria": "grupo1"
     },
     {
         "id":5, 
@@ -42,7 +46,8 @@
         "stock": 20,
         "cantidad": 0,
         "precioCantidad": 0,
-        "img": "./assets/img/productos/pasta_dental.jpg"
+        "img": "./assets/img/productos/pasta_dental.jpg",
+        "categoria": "grupo1"
     },
     {
         "id":6, 
@@ -51,6 +56,7 @@
         "stock": 20,
         "cantidad": 0,
         "precioCantidad": 0,
-        "img": "./assets/img/productos/detergente_solido.jpg"
+        "img": "./assets/img/productos/detergente_solido.jpg",
+        "categoria": "grupo2"
     }
 ]
