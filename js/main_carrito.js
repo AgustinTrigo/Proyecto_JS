@@ -37,21 +37,25 @@ function renderCarrito(){
 getCart();
 renderCarrito();
 
-
-
 function quitarProducto(index){
     if(carritoLocal[index].cantidad > 0){
+        getContador();
+        contadorQty--;
         carritoLocal[index].cantidad--;
         carritoLocal[index].precioCantidad = carritoLocal[index].precio * carritoLocal[index].cantidad;
     }
     carritoLocal[index].cantidad === 0 && carritoLocal.splice(index, 1);
+    loadContador();
     loadCart();
     renderCarrito();
 }
 
 function vaciarCarrito(){
+    getContador();
     carritoLocal = [];
     localStorage.removeItem("carrito");
+    contadorQty = 0;
+    localStorage.removeItem("contador");
     renderCarrito();
     Toastify({
         text: "VACIASTE EL CARRITO",
