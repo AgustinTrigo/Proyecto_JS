@@ -25,8 +25,12 @@ function renderCarrito(){
                 <h5>unidades: ${i.cantidad}</h5>
                 <h5>subtotal $: ${i.precioCantidad}</h5>
             </div>
+            <div class="carrito__btn--plusMinus">
+                <button type="button" value="" id="plusBtn" onClick="quitarProducto(${index})" class="plusBtn"><i class="fa-solid fa-circle-plus"></i></button>
+                <button type="button" value="" id="plusBtn" onClick="quitarProducto(${index})" class="minusBtn"><i class="fa-solid fa-circle-minus"></i></button>
+            </div>
             <div class="carrito__btn">
-                <button type="button" value="" id="trashBtn" onClick="quitarProducto(${index})"><i class="fa-solid fa-trash-can"></i></button>
+                <button type="button" value="" id="trashBtn" onClick="eliminarProducto(${index})"><i class="fa-solid fa-trash-can"></i></button>
             </div>
         </div>`;
         
@@ -45,6 +49,16 @@ function quitarProducto(index){
         carritoLocal[index].precioCantidad = carritoLocal[index].precio * carritoLocal[index].cantidad;
     }
     carritoLocal[index].cantidad === 0 && carritoLocal.splice(index, 1);
+    loadContador();
+    loadCart();
+    renderCarrito();
+}
+
+function eliminarProducto(index){
+    getContador();
+    contadorQty -= carritoLocal[index].cantidad;
+    console.log(contadorQty);
+    carritoLocal.splice(index, 1);
     loadContador();
     loadCart();
     renderCarrito();

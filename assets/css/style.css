@@ -29,7 +29,7 @@ a{
 .navbar__submenu{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: end;
     align-items: center;
     height: 55px;
     background-color: #76d4d4;
@@ -56,11 +56,10 @@ a{
 
 .navbar__submenu--btn{
     position: relative;
-
 }
 
 .navbar__submenu--btn button{
-    border: solid 1px white;
+    border: solid 2px white;
     cursor: pointer;
     background-color: #76d4d4;
     font-size: 1.3em;
@@ -68,12 +67,10 @@ a{
     margin-right: 13px;
     border-radius: 50px;
     padding: 8px;
-    box-shadow: 0px 0px 15px -5px rgba(0,0,0,0.53);
 }
 
-.navbar__submenu--btn:active button{
-    transform: translateY(-1px);
-    box-shadow: 0px 0px 10px -1px rgb(255, 255, 255);
+.navbar__submenu--btn:hover i{
+    transform: rotateZ(-5deg);
 }
 
 .contadorCarrito{
@@ -223,6 +220,26 @@ a{
     text-transform: uppercase;
     color: #46A5A5;
     letter-spacing: 1.2px;
+}
+
+.carrito__btn--plusMinus{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 60px;
+    height: 100%;
+
+
+}
+
+.carrito__btn--plusMinus button{
+    position: relative;
+    border: none;
+    cursor: pointer;
+    margin: 4px 0px;
+    background-color: white;
+    font-size: 1.3em;
+    color: rgb(137, 206, 191);
 }
 
 .carrito__btn{
