@@ -26,7 +26,7 @@ function renderCarrito(){
                 <h5>subtotal $: ${i.precioCantidad}</h5>
             </div>
             <div class="carrito__btn--plusMinus">
-                <button type="button" value="" id="plusBtn" onClick="quitarProducto(${index})" class="plusBtn"><i class="fa-solid fa-circle-plus"></i></button>
+                <button type="button" value="" id="plusBtn" onClick="sumarProducto(${index})" class="plusBtn"><i class="fa-solid fa-circle-plus"></i></button>
                 <button type="button" value="" id="plusBtn" onClick="quitarProducto(${index})" class="minusBtn"><i class="fa-solid fa-circle-minus"></i></button>
             </div>
             <div class="carrito__btn">
@@ -40,6 +40,18 @@ function renderCarrito(){
 
 getCart();
 renderCarrito();
+
+function sumarProducto(index){
+    if(carritoLocal[index].cantidad > 0){
+        getContador();
+        contadorQty++;
+        carritoLocal[index].cantidad++;
+        carritoLocal[index].precioCantidad = carritoLocal[index].precio * carritoLocal[index].cantidad;
+    }
+    loadContador();
+    loadCart();
+    renderCarrito();
+}
 
 function quitarProducto(index){
     if(carritoLocal[index].cantidad > 0){
