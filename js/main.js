@@ -32,7 +32,6 @@ fetch('./js/inventario.json')
                 </div>
             </div>`
         })
-        
     }) 
 
 
@@ -48,22 +47,27 @@ function addProduct(index){
             inventario[index].cantidad += 1;
             inventario[index].precioCantidad = inventario[index].cantidad * inventario[index].precio;
             carritoLocal.push(inventario[index]);
-        } else if(carritoLocal.length > 0){
+            callToastify();
+        } else if((carritoLocal[findI].cantidad < carritoLocal[findI].stock) && (carritoLocal.length > 0)){
             carritoLocal[findI].cantidad += 1;
             carritoLocal[findI].precioCantidad = carritoLocal[findI].cantidad * carritoLocal[findI].precio;
+            callToastify();
         }
         loadCart();
-        Toastify({
-            text: "PRODUCTO AGREGADO AL CARRITO",
-            duration: 1500,
-            position: "top",
-            position: "left",
-            style: {
-                background: 'linear-gradient(to top left, rgb(57, 175, 155), rgb(186, 228, 178))'
-            }
-        }).showToast();
         sumarCantidad(carritoLocal);
         })
+}
+
+function callToastify(){
+    Toastify({
+        text: "PRODUCTO AGREGADO AL CARRITO",
+        duration: 1500,
+        position: "top",
+        position: "left",
+        style: {
+            background: 'linear-gradient(to top left, rgb(57, 175, 155), rgb(186, 228, 178))'
+        }
+    }).showToast();
 }
 
 function sumarCantidad(array){

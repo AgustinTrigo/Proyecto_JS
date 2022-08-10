@@ -20,6 +20,10 @@ a{
     text-decoration: none;
 }
 
+.navbar{
+    position: sticky;
+    top: 0px;
+}
 
 .navbar__menu{
     height: 45px;
@@ -134,6 +138,19 @@ a{
 .productCard__btn{
     font-family: 'Oswald', sans-serif;
     background-color: rgb(164, 231, 86);
+    margin: 5px 0px 20px 0px;
+    padding: 6px 15px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0px 0px 8px -5px rgba(0,0,0,0.53);
+    font-weight: 700;
+    letter-spacing: 1.2px;
+}
+
+.productCard__btn--off{
+    font-family: 'Oswald', sans-serif;
+    background-color: rgb(196, 196, 196);
     margin: 5px 0px 20px 0px;
     padding: 6px 15px;
     border-radius: 5px;

@@ -42,15 +42,17 @@ getCart();
 renderCarrito();
 
 function sumarProducto(index){
-    if(carritoLocal[index].cantidad > 0){
-        getContador();
-        contadorQty++;
-        carritoLocal[index].cantidad++;
-        carritoLocal[index].precioCantidad = carritoLocal[index].precio * carritoLocal[index].cantidad;
+    if(carritoLocal[index].cantidad < carritoLocal[index].stock){
+        if(carritoLocal[index].cantidad > 0){
+            getContador();
+            contadorQty++;
+            carritoLocal[index].cantidad++;
+            carritoLocal[index].precioCantidad = carritoLocal[index].precio * carritoLocal[index].cantidad;
+        }
+        loadContador();
+        loadCart();
+        renderCarrito();
     }
-    loadContador();
-    loadCart();
-    renderCarrito();
 }
 
 function quitarProducto(index){
@@ -69,7 +71,6 @@ function quitarProducto(index){
 function eliminarProducto(index){
     getContador();
     contadorQty -= carritoLocal[index].cantidad;
-    console.log(contadorQty);
     carritoLocal.splice(index, 1);
     loadContador();
     loadCart();
