@@ -28,6 +28,38 @@ a{
 .navbar__menu{
     height: 45px;
     background-color: #4eb1b1;
+    display: flex;
+    flex-direction: row;
+}
+
+.hidden__menu{
+    height: 125px;
+    background-color: #4eb1b1;
+    display: flex;
+    flex-direction: column;
+}
+
+.navbar__menu--list{
+    display: block;
+    text-decoration: none;
+    list-style: none; 
+    margin-left: 10px;
+
+}
+
+.navbar__menu--list a{
+    text-transform: uppercase;
+    color: white;
+}
+
+.navbar__menu--btn button{
+    cursor: pointer;
+    background-color: #4eb1b1;
+    font-size: 1.6em;
+    color: rgb(255, 255, 255);
+    border: none;
+    margin: 10px 0px 25px 10px;
+    text-align: center;
 }
 
 .navbar__submenu{

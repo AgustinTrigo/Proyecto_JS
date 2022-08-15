@@ -5,7 +5,34 @@ let contador = document.getElementById("contar");
 let catalogo = document.getElementById("catalogo");
 catalogo.className = "galeria";
 let select = document.getElementById("filtro");
+let navbarbtn = document.getElementById("navbar--btn");
+let navbar = document.getElementById("navbar");
+let iconoNavbar = document.getElementById("iconoAbrir");
 
+navbarbtn.addEventListener("click", desplegarMenu);
+
+function desplegarMenu(){
+    navbarbtn.innerHTML = `<button id="iconoCerrar" onClick="cerrarMenu()"><i class="fa-solid fa-xmark"></i></button>`
+    navbar.className += (" hidden__menu");
+    navbar.innerHTML += `
+    <div class="navbar__menu--list">
+        <ul>
+            <li><a href="./index.html">inicio</a></li>
+            <li><a href="./carrito.html">carrito de compras</a></li>
+        </ul>   
+    </div>`
+    console.log("funciona")
+}
+
+function cerrarMenu(){
+    navbar.className = ("navbar__menu");
+    navbar.innerHTML = `
+    <div id="navbar--btn" class="navbar__menu--btn">
+        <button id="iconoAbrir"><i class="fa-solid fa-bars"></i></button>
+    </div>
+    `
+    navbarbtn.addEventListener("click", desplegarMenu);
+}
 
 if(contadorQty >= 1){
     contador.className = ("contadorCarrito");
