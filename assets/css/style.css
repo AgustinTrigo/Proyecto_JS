@@ -39,7 +39,7 @@ a{
     flex-direction: column;
 }
 
-.navbar__menu--list{
+.navbar__menu--list ul{
     display: block;
     text-decoration: none;
     list-style: none; 
