@@ -23,28 +23,32 @@ a{
 .navbar{
     position: sticky;
     top: 0px;
+    z-index: 1000;
 }
 
 .navbar__menu{
     height: 45px;
-    background-color: #4eb1b1;
+    background-color: #76d4d4;
     display: flex;
     flex-direction: row;
 }
 
 .hidden__menu{
-    height: 125px;
-    background-color: #4eb1b1;
+    height: 160px;
+    background-color: #76d4d4;
     display: flex;
     flex-direction: column;
+    border-bottom: solid 1.5px white;
 }
 
-.navbar__menu--list ul{
+.navbar__menu--list li{
     display: block;
     text-decoration: none;
     list-style: none; 
-    margin-left: 10px;
-
+    margin: 10px;
+    font-weight: 600;
+    letter-spacing: 1.4px;
+    
 }
 
 .navbar__menu--list a{
@@ -54,11 +58,11 @@ a{
 
 .navbar__menu--btn button{
     cursor: pointer;
-    background-color: #4eb1b1;
-    font-size: 1.6em;
+    background-color: #76d4d4;
+    font-size: 1.8em;
     color: rgb(255, 255, 255);
     border: none;
-    margin: 10px 0px 25px 10px;
+    margin: 8px 0px 25px 10px;
     text-align: center;
 }
 
@@ -350,6 +354,30 @@ a{
 
 .ocultar{
     display: none;
+}
+
+.toastifyCard{
+    background: linear-gradient(135deg, #3eb7b76f,#3eb7b76f);
+    backdrop-filter: blur(21px);
+    border-radius: 10px;
+    border: none;
+    color: #ffffff;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-family: 'Oswald', sans-serif;
+    letter-spacing: .9px;
+}
+
+.toastifyCard-eliminar{
+    background: linear-gradient(135deg, #b7603e6f,#b7603e6f);
+    backdrop-filter: blur(21px);
+    border-radius: 10px;
+    border: none;
+    color: #ffffff;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-family: 'Oswald', sans-serif;
+    letter-spacing: .9px;
 }
 
 

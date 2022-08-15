@@ -47,26 +47,24 @@ function addProduct(index){
             inventario[index].cantidad += 1;
             inventario[index].precioCantidad = inventario[index].cantidad * inventario[index].precio;
             carritoLocal.push(inventario[index]);
-            callToastify();
+            callToastify(inventario[index].nombre);
         } else if((carritoLocal[findI].cantidad < carritoLocal[findI].stock) && (carritoLocal.length > 0)){
             carritoLocal[findI].cantidad += 1;
             carritoLocal[findI].precioCantidad = carritoLocal[findI].cantidad * carritoLocal[findI].precio;
-            callToastify();
+            callToastify(carritoLocal[findI].nombre);
         }
         loadCart();
         sumarCantidad(carritoLocal);
         })
 }
 
-function callToastify(){
+function callToastify(producto){
     Toastify({
-        text: "PRODUCTO AGREGADO AL CARRITO",
+        text: `se agrego al carrito: \n${producto}`,
+        className: "toastifyCard",
         duration: 1500,
-        position: "top",
-        position: "left",
-        style: {
-            background: 'linear-gradient(to top left, rgb(57, 175, 155), rgb(186, 228, 178))'
-        }
+        gravity: "bottom",
+        position: "right",
     }).showToast();
 }
 

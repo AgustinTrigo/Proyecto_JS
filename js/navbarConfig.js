@@ -8,7 +8,7 @@ function desplegarMenu(){
     navBar.className = "navbar__menu hidden__menu";
     navUl.innerHTML = `
     <ul>
-        <li><a href="./index.html">inicio</a></li>
+        <li><a href="./index.html">catalogo</a></li>
         <li><a href="./carrito.html">carrito de compras</a></li>
     </ul>
     `

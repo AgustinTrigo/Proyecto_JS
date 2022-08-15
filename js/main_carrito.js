@@ -45,6 +45,7 @@ function sumarProducto(index){
     if(carritoLocal[index].cantidad < carritoLocal[index].stock){
         if(carritoLocal[index].cantidad > 0){
             getContador();
+            callToastAgregar(carritoLocal[index].nombre);
             contadorQty++;
             carritoLocal[index].cantidad++;
             carritoLocal[index].precioCantidad = carritoLocal[index].precio * carritoLocal[index].cantidad;
@@ -55,9 +56,20 @@ function sumarProducto(index){
     }
 }
 
+function callToastAgregar(producto){
+    Toastify({
+        text: `se agrego al carrito: \n${producto}`,
+        className: "toastifyCard",
+        duration: 1500,
+        gravity: "bottom",
+        position: "right",
+    }).showToast();
+}
+
 function quitarProducto(index){
     if(carritoLocal[index].cantidad > 0){
         getContador();
+        callToastify(1, carritoLocal[index].nombre);
         contadorQty--;
         carritoLocal[index].cantidad--;
         carritoLocal[index].precioCantidad = carritoLocal[index].precio * carritoLocal[index].cantidad;
@@ -70,6 +82,7 @@ function quitarProducto(index){
 
 function eliminarProducto(index){
     getContador();
+    callToastify(carritoLocal[index].cantidad, carritoLocal[index].nombre);
     contadorQty -= carritoLocal[index].cantidad;
     carritoLocal.splice(index, 1);
     loadContador();
@@ -77,20 +90,37 @@ function eliminarProducto(index){
     renderCarrito();
 }
 
-function vaciarCarrito(){
-    getContador();
-    carritoLocal = [];
-    localStorage.removeItem("carrito");
-    contadorQty = 0;
-    localStorage.removeItem("contador");
-    renderCarrito();
+function callToastify(cantidad, producto){
     Toastify({
-        text: "VACIASTE EL CARRITO",
+        text: `se elimino del carrito: \nx${cantidad} ${producto}`,
+        className: "toastifyCard-eliminar",
         duration: 2000,
-        position: "top",
-        position: "left",
-        style: {
-            background: 'linear-gradient(to top left, rgb(247, 163, 160), rgb(204, 28, 21))'
-        }
+        gravity: "bottom",
+        position: "right",
     }).showToast();
+}
+
+function vaciarCarrito(){
+    if(getContador() > 0){
+        carritoLocal = [];
+        localStorage.removeItem("carrito");
+        contadorQty = 0;
+        localStorage.removeItem("contador");
+        renderCarrito();
+        Toastify({
+            text: "VACIASTE EL CARRITO",
+            duration: 2000,
+            gravity: "bottom",
+            position: "right",
+            className: "toastifyCard-eliminar"
+        }).showToast();
+    }else{
+        Toastify({
+            text: "no hay productos en su carrito",
+            duration: 2000,
+            gravity: "bottom",
+            position: "right",
+            className: "toastifyCard-eliminar"
+        }).showToast();
+    }
 }
