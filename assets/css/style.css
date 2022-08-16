@@ -380,6 +380,18 @@ a{
     letter-spacing: .9px;
 }
 
+.toastifyCard-stock{
+    background: linear-gradient(135deg, #ebbc3a6f,#ebbc3a6f);
+    backdrop-filter: blur(21px);
+    border-radius: 10px;
+    border: none;
+    color: black;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-family: 'Oswald', sans-serif;
+    letter-spacing: .9px;
+}
+
 
 
 

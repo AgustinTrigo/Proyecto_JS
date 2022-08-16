@@ -5,8 +5,6 @@ let contador = document.getElementById("contar");
 let catalogo = document.getElementById("catalogo");
 catalogo.className = "galeria";
 let select = document.getElementById("filtro");
-
-
 if(contadorQty >= 1){
     contador.className = ("contadorCarrito");
     contador.innerHTML = "";
@@ -48,6 +46,8 @@ function addProduct(index){
             inventario[index].precioCantidad = inventario[index].cantidad * inventario[index].precio;
             carritoLocal.push(inventario[index]);
             callToastify(inventario[index].nombre);
+        } else if(carritoLocal[findI].cantidad === carritoLocal[findI].stock){
+            toastStock();
         } else if((carritoLocal[findI].cantidad < carritoLocal[findI].stock) && (carritoLocal.length > 0)){
             carritoLocal[findI].cantidad += 1;
             carritoLocal[findI].precioCantidad = carritoLocal[findI].cantidad * carritoLocal[findI].precio;
@@ -79,6 +79,15 @@ function sumarCantidad(array){
     loadContador();
 }
 
+function toastStock(){
+    Toastify({
+        text: `lo sentimos no contamos con mas stock del producto que desea adquirir`,
+        className: "toastifyCard-stock",
+        duration: 2000,
+        gravity: "bottom",
+        position: "right",
+    }).showToast();
+}
 
 
 

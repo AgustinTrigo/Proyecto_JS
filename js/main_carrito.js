@@ -53,6 +53,14 @@ function sumarProducto(index){
         loadContador();
         loadCart();
         renderCarrito();
+    }else if(carritoLocal[index].cantidad === carritoLocal[index].stock){
+        Toastify({
+            text: `lo sentimos no contamos con mas stock del producto que desea adquirir`,
+            className: "toastifyCard-stock",
+            duration: 2000,
+            gravity: "bottom",
+            position: "right",
+        }).showToast();
     }
 }
 
