@@ -9,7 +9,7 @@ function renderCarrito(){
             <h5>total $: ${carritoLocal.reduce((a,b) => a + b.precioCantidad, 0)}</h5>
         </div>
         <div class="carrito__panel--btn">
-            <button type="button" value="" id="finalizarBtn">finalizar compra</button>
+            <button type="button" value="" id="finalizarBtn" onClick="abrirPag()">finalizar compra</button>
             <button type="button" value="" id="vaciarBtn" onClick="vaciarCarrito()">vaciar carrito</button>
         </div>
     </div>`;
@@ -131,4 +131,19 @@ function vaciarCarrito(){
             className: "toastifyCard-eliminar"
         }).showToast();
     }
+}
+
+function abrirPag(){
+    if(getContador() > 0){
+        window.open("./finalizar-compra.html")
+    }else{
+        Toastify({
+            text: "no hay productos en su carrito",
+            duration: 2000,
+            gravity: "bottom",
+            position: "right",
+            className: "toastifyCard-eliminar"
+        }).showToast();
+    }
+    
 }
