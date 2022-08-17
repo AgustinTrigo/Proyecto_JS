@@ -74,7 +74,6 @@ function sumarCantidad(array){
         contador.className = ("contadorCarrito");
         contador.innerHTML = "";
         contador.innerHTML += `<h6>${contadorQty}</h6>`;
-        console.log(contadorQty);
     }
     loadContador();
 }
