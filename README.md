@@ -1,5 +1,5 @@
 
-# Proyecto Eccomerce con Javascript
+# Proyecto Ecommerce con Javascript
 ## Descripcion
 
 Carrito de compras basico, en el cual se puede agregar o quitar productos o eliminar un lote completo, vaciar el carrito, un stock ficticio de los productos,
